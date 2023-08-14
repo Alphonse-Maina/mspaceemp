@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title> M-space Dashboard</title>
+         <link rel="shortcut icon" href="images/new-mspace-logo.jpeg"/>
+         <style>
+             #header{
+                 text-align: center;
+             }
+             #content-page{
+                 text-align: center;
+                 background-color: white !important;
+             }
+         </style>
+    </h:head>
+    <h:body>
+        <p:layout fullPage="true" >
+            <p:layoutUnit position="north" size="100" resizable="false" id="header">
+                <ui:include src="header.xhtml"/>
+            </p:layoutUnit>
+            
+            <p:layoutUnit position="west" size="150" resizable="false">
+                <ui:include src="nav.xhtml" />
+            </p:layoutUnit>
+            
+            <p:layoutUnit position="center"  >
+                <div id="content-page">
+                     <img src="resources/images/new-mspace-logo.jpeg" height="300px" width="600px" alt="alt"/>
+                     <hr/>
+                     <h1>M-SPACE SOLUTIONS EMPLOYEE MONITORING SYSTEM</h1>
+                </div>
+            </p:layoutUnit>
+            <p:layoutUnit position="south" size="50" resizable="false">
+                <ui:include src="footer.xhtml"/>
+                </p:layoutUnit>
+    </p:layout>
+    </h:body>
+</html>
+

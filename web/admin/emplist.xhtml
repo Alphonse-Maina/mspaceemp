@@ -1,0 +1,40 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+
+    <ui:composition>
+        <h:body>
+             <h1>M-SPACE SOLUTIONS EMPLOYEES</h1>
+                    <h:form id="datatable">
+                        <p:commandButton value="EXCEL" ajax="false">
+                            <p:dataExporter type="xlsxstream" target="employeet" fileName="M-SPACE" pageOnly="true"/>
+                        </p:commandButton>
+                        <p:commandButton value="PDF" ajax="false">
+                            <p:dataExporter type="pdf" target="employeet" fileName="M-SPACE" pageOnly="true"/>
+                        </p:commandButton>
+                        <p:dataTable id="employeet" var="employee" value="#{mspacecontroller.employees}">
+
+                        <p:column headerText="Badgenumber">
+                            <h:outputText value="#{employee.badgenumber}" />
+                        </p:column>
+
+                        <p:column headerText="Name" >
+                            <h:outputText value="#{employee.name}" />
+                        </p:column>
+
+                        <p:column headerText="Gender">
+                            <h:outputText value="#{employee.gender}" />
+                        </p:column>
+
+                         <p:column headerText="PAGER">
+                             <h:outputText value="#{employee.PAGER}" />
+                        </p:column>          
+                    </p:dataTable>
+                    </h:form>    
+                
+        </h:body>
+    </ui:composition>
+</html>

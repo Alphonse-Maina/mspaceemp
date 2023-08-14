@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title> M-space Messages</title>
+         <link rel="shortcut icon" href="images/new-mspace-logo.jpeg"/>
+    </h:head>
+    <h:body>
+        
+    <p:layout fullPage="true" >
+            <p:layoutUnit position="north" size="100" resizable="false">
+                <ui:include src="header.xhtml"/>
+            </p:layoutUnit>
+            
+            <p:layoutUnit position="west" size="150" resizable="false">
+                <ui:include src="nav.xhtml" />
+            </p:layoutUnit>
+            
+            <p:layoutUnit position="center"  >
+                <div>
+                    <div style="float: left; border-right: 2px solid black; width: 50%;
+                         text-align: center;">
+                        <h:form>
+                        <h4>Create new Message</h4>
+                        <p:panelGrid columns="1">
+                            <p:inputTextarea rows="20" cols="60" value="#{messages.employee.message}" placeholder="Enter your message here"/>
+                        </p:panelGrid><br/><br/>
+                        <p:panelGrid columns="2">
+                            <p:selectOneMenu id="group" value="#{messages.employee.PAGER}">
+                            <f:selectItem itemLabel="Select One" itemValue=""/>
+                            <f:selectItems value="#{dropdowns.contact}"/>
+                        </p:selectOneMenu>
+                            
+                            <p:commandButton value="send" action="#{messages.sendmessages()}" update="dtmessage"/>
+                        </p:panelGrid>
+                        </h:form>
+                    </div>
+                    <div style="float: right">
+                        <h4>View messages here</h4>  
+                        <p:dataTable id="dtmessage" var="messagelist" value="#{messages.messages}">
+                            <p:column headerText="Sent Messages">
+                                 <h:outputText value="#{messagelist.message}" />
+                            </p:column>
+                            <p:column headerText="Action">
+                                <h:outputText value="View"/>
+                            </p:column>
+                        </p:dataTable>
+                    </div>
+                </div>
+            </p:layoutUnit>
+            <p:layoutUnit position="south" size="50" resizable="false">
+        <ui:include src="footer.xhtml"/>
+               
+                </p:layoutUnit>
+    </p:layout>
+    </h:body>
+</html>
+
+
+

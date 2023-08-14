@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title> M-space checks</title>
+         <link rel="shortcut icon" href="images/new-mspace-logo.jpeg"/>
+    </h:head>
+    <h:body>
+        <p:layout fullPage="true" >
+            <p:layoutUnit position="north" size="100" resizable="false">
+                <ui:include src="header.xhtml"/>
+            </p:layoutUnit>
+            
+            <p:layoutUnit position="west" size="150" resizable="false">
+                <ui:include src="nav.xhtml" />
+            </p:layoutUnit>
+            
+            <p:layoutUnit position="center"  >
+                <div id="content-page">
+                     
+                     <h1>M-SPACE SOLUTIONS EMPLOYEEs CHECK</h1>
+                     <p:dataTable var="employee" value="#{mspacecontroller.employeess}">
+            <p:column headerText="USER ID">
+                <h:outputText value="#{employee.USERID}" />
+            </p:column>
+                        
+            <p:column headerText="CheckTime">
+                <h:outputText value="#{employee.CHECKTIME}" />
+            </p:column>
+
+            <p:column headerText="LOGID">
+                <h:outputText value="#{employee.LOGID}" />
+            </p:column>
+
+            <p:column headerText="sn">
+                <h:outputText value="#{employee.sn}" />
+            </p:column>
+                        
+                     
+        </p:dataTable>
+                </div>
+            </p:layoutUnit>
+            <p:layoutUnit position="south" size="50" resizable="false">
+                <ui:include src="footer.xhtml"/>
+                </p:layoutUnit>
+    </p:layout>
+    </h:body>
+</html>
+

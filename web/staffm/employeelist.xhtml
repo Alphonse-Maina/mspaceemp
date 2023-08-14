@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title> M-space Employees</title>
+         <link rel="shortcut icon" href="images/new-mspace-logo.jpeg"/>
+    </h:head>
+    <h:body>
+        <p:layout fullPage="true" >
+            <p:layoutUnit position="north" size="100" resizable="false">
+                <ui:include src="header.xhtml"/>
+            </p:layoutUnit>
+            
+            <p:layoutUnit position="west" size="150" resizable="false">
+                <ui:include src="nav.xhtml" />
+            </p:layoutUnit>
+            
+            <p:layoutUnit position="center"  >
+                <div id="content-page">
+                    <h1>M-SPACE SOLUTIONS EMPLOYEES</h1>
+                    <p:dataTable var="employee" value="#{mspacecontroller.employees}">
+            
+            <p:column headerText="Badgenumber">
+                <h:outputText value="#{employee.badgenumber}" />
+            </p:column>
+
+            <p:column headerText="Name">
+                <h:outputText value="#{employee.name}" />
+            </p:column>
+
+            <p:column headerText="Gender">
+                <h:outputText value="#{employee.gender}" />
+            </p:column>
+                        
+             <p:column headerText="PAGER">
+                 <h:outputText value="#{employee.PAGER}" />
+            </p:column>          
+        </p:dataTable>
+                </div>
+            </p:layoutUnit>
+            <p:layoutUnit position="south" size="50" resizable="false">
+                <ui:include src="footer.xhtml"/>
+                </p:layoutUnit>
+    </p:layout>
+    </h:body>
+</html>
+

@@ -1,0 +1,35 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+
+    <ui:composition>
+        <h:body>
+           
+                <h:form>
+                    <div style="text-align: center;">
+                        <p:commandButton style="border: none !important;
+                                                  width: 120px !important;
+                                         "  value="Dashboard" action="#{mspacecontroller.dash()}"/>
+                        <p:commandButton style="border: none !important;
+                                                  width: 120px !important;
+                                                  margin-top: 5px !important;
+                                         "  value="Staff Members" action="#{mspacecontroller.emplist()}"/>
+                        <p:commandButton style="border: none !important;
+                                                  width: 120px !important;
+                                                  margin-top: 5px !important;
+                                         " value="Checks" action="#{mspacecontroller.checks()}"/>
+                         <p:commandButton style="border: none !important;
+                                                  width: 120px !important;
+                                                  margin-top: 5px !important;
+                                                  " value="LOG OUT" action="#{mspacecontroller.logout()}" ajax="false"/>
+                    
+                    </div>
+                </h:form>
+                
+            
+        </h:body>
+    </ui:composition>
+</html>

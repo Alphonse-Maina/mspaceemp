@@ -1,0 +1,24 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+
+    <ui:composition>
+        <h:body>
+            <div style="align-items: center;">
+            
+                <div style="width: 50%;
+                     height: 50px;">
+                <img src="resources/images/new-mspace-logo.jpeg" height="75px" width="300px" alt="alt"/>
+           </div>
+                <div style="float: right;">
+                    <p:outputLabel value="#{employee.username}"/>
+                   <br/>
+                    <p:clock pattern="HH:mm:ss dd.MM.yyyy" mode="server"/>
+                </div>
+          </div>
+        </h:body>
+    </ui:composition>
+</html>
